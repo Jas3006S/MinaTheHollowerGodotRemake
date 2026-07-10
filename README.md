@@ -1,6 +1,10 @@
 # Mina the Hollower Godot Remake
 This is my recreation of Mina the Hollowers movement for now. I plan on recreating a few more of the systems in the future.
 
+
+## NOTE - All sprites and sound effects were sourced from my purchased copy of Mina the Hollower. I do not own any of the spirtes or audio assets, all credits go to the original creators of Mina the Hollower.
+
+
 ![](https://github.com/Jas3006S/MinaTheHollowerGodotRemake/blob/main/OriginalGameClips/githubclip.gif)
 
 ## Video Breakdown
