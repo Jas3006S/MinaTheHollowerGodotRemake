@@ -1,6 +1,8 @@
 # Mina the Hollower Godot Remake
 This is my recreation of Mina the Hollowers movement for now. I plan on recreating a few more of the systems in the future.
 
+![](https://github.com/Jas3006S/MinaTheHollowerGodotRemake/blob/main/OriginalGameClips/githubclip.gif)
+
 ## Video Breakdown
 I have a video breaking down the entire movement system here : https://www.youtube.com/watch?v=_3y9Zvfudi8
 
