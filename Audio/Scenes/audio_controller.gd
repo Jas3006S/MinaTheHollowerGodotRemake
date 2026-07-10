@@ -1,3 +1,6 @@
+## Written by Jas Sandhu
+## June 10 2026
+
 extends Node3D
 
 @onready var jump_sfx: AudioStreamPlayer3D = $JumpSFX
