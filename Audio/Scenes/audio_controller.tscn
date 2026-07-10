@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dvgldq1m1ll3s"]
+
+[ext_resource type="AudioStream" uid="uid://bm20i6bqv6uvr" path="res://Audio/SFX/Jump.wav" id="1_1wgal"]
+[ext_resource type="Script" uid="uid://bhnapfxb3umuu" path="res://Audio/Scenes/audio_controller.gd" id="1_m6u7j"]
+[ext_resource type="AudioStream" uid="uid://cd4jelp5hwtvs" path="res://Audio/SFX/Hollowing.wav" id="2_m6u7j"]
+[ext_resource type="AudioStream" uid="uid://02iggbfggfo6" path="res://Audio/SFX/HollowJump.wav" id="3_rr1k1"]
+[ext_resource type="AudioStream" uid="uid://tptj124bnri4" path="res://Audio/SFX/HollowStart.wav" id="4_2qiuy"]
+[ext_resource type="AudioStream" uid="uid://dtc674ip2i3r4" path="res://Audio/SFX/Land.wav" id="5_d12nt"]
+
+[node name="AudioController" type="Node3D" unique_id=1600818916]
+script = ExtResource("1_m6u7j")
+
+[node name="JumpSFX" type="AudioStreamPlayer3D" parent="." unique_id=951814122]
+stream = ExtResource("1_1wgal")
+volume_db = 52.0
+
+[node name="HollowingSFX" type="AudioStreamPlayer3D" parent="." unique_id=1289750849]
+stream = ExtResource("2_m6u7j")
+volume_db = 52.0
+
+[node name="HollowJumpSFX" type="AudioStreamPlayer3D" parent="." unique_id=1960931634]
+stream = ExtResource("3_rr1k1")
+volume_db = 52.0
+
+[node name="HollowStartSFX" type="AudioStreamPlayer3D" parent="." unique_id=2002366714]
+stream = ExtResource("4_2qiuy")
+volume_db = 52.0
+
+[node name="LandSFX" type="AudioStreamPlayer3D" parent="." unique_id=153672401]
+stream = ExtResource("5_d12nt")
+volume_db = 52.0
+
+[connection signal="finished" from="HollowStartSFX" to="." method="_on_hollow_start_sfx_finished"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b4mpu32uhwhfu"]
+
+[ext_resource type="Texture2D" uid="uid://dh1fc15txjsgy" path="res://Sprites/Characters/Hollowing/dirtvfx.png" id="1_qltkd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68j52"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_qltkd")
+billboard_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rf634"]
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 1.5
+initial_velocity_max = 3.0
+
+[node name="DirtVFX" type="Node3D" unique_id=427109899]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1935329414]
+material_override = SubResource("StandardMaterial3D_68j52")
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_rf634")

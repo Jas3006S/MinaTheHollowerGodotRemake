@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://di0uq8xk7355a"
+path="res://.godot/imported/MinaMovementAudio.mp3-7fb91a969825ae9fb33998d5d26b13e2.mp3str"
+
+[deps]
+
+source_file="res://Audio/Raw Audio/MinaMovementAudio.mp3"
+dest_files=["res://.godot/imported/MinaMovementAudio.mp3-7fb91a969825ae9fb33998d5d26b13e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

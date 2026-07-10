@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bawnyd7oa2m7y"]
+
+[ext_resource type="Texture2D" uid="uid://cvx68uns6kg6y" path="res://Sprites/Tiles/base.png" id="1_cdj7t"]
+[ext_resource type="PackedScene" uid="uid://co35vgo110xfk" path="res://Player/player.tscn" id="1_onoy2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_esjev"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_onoy2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onoy2"]
+shading_mode = 0
+albedo_texture = ExtResource("1_cdj7t")
+uv1_scale = Vector3(25, 25, 25)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_onoy2"]
+material = SubResource("StandardMaterial3D_onoy2")
+
+[node name="World" type="Node3D" unique_id=616585785]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1251589354]
+physics_material_override = SubResource("PhysicsMaterial_esjev")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=503768087]
+shape = SubResource("WorldBoundaryShape3D_onoy2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1302323507]
+transform = Transform3D(10.954754, 0, 0, 0, 0.4626334, 0, 0, 0, 11.1381645, 0, 0, 0)
+mesh = SubResource("PlaneMesh_onoy2")
+
+[node name="Player" parent="." unique_id=722806525 instance=ExtResource("1_onoy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08473849, 2.1389465, 0.009893417)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1208347702]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 50, 0)
+projection = 1
+size = 10.0

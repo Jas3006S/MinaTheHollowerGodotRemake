@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://co35vgo110xfk"]
+
+[ext_resource type="Script" uid="uid://bjtjmdhg6cvmm" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://dc3v3q3e5xolf" path="res://Sprites/Characters/Mina/shadow.png" id="3_p5o4e"]
+[ext_resource type="Texture2D" uid="uid://cuuvgk1to8d7d" path="res://Sprites/Characters/Mina/blinkdown1.png" id="4_8mwp6"]
+[ext_resource type="Texture2D" uid="uid://gn2c88uqtgrm" path="res://Sprites/Characters/Hollowing/hollowing1.png" id="4_dkpta"]
+[ext_resource type="Texture2D" uid="uid://bh2co6dgl8xkb" path="res://Sprites/Characters/Mina/f1.png" id="4_gu6f8"]
+[ext_resource type="Texture2D" uid="uid://c70pvg70su4m7" path="res://Sprites/Characters/Mina/f2.png" id="5_dkpta"]
+[ext_resource type="Texture2D" uid="uid://b7l1e2631o71t" path="res://Sprites/Characters/Hollowing/hollowing2.png" id="5_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://bopthrqr43fe4" path="res://Sprites/Characters/Mina/blinkdown2.png" id="5_qemgg"]
+[ext_resource type="Texture2D" uid="uid://dnr135c1q4qia" path="res://Sprites/Characters/Mina/sideblink1.png" id="6_8viyr"]
+[ext_resource type="Texture2D" uid="uid://bgwdvc7jmhqtp" path="res://Sprites/Characters/Mina/f3.png" id="6_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://o2nqo7ho1asf" path="res://Sprites/Characters/Mina/jump.png" id="6_o28un"]
+[ext_resource type="Texture2D" uid="uid://dombj1uubodmo" path="res://Sprites/Characters/Mina/f4.png" id="7_pisgm"]
+[ext_resource type="Texture2D" uid="uid://b5110gyk2f7wp" path="res://Sprites/Characters/Mina/sideblink2.png" id="7_sm0op"]
+[ext_resource type="Texture2D" uid="uid://dgctcek40xtm8" path="res://Sprites/Characters/Mina/s1.png" id="8_b1ygp"]
+[ext_resource type="Texture2D" uid="uid://cm326w55520d6" path="res://Sprites/Characters/Mina/s2.png" id="9_o28un"]
+[ext_resource type="Texture2D" uid="uid://yhtt4pnxtu8o" path="res://Sprites/Characters/Mina/b1.png" id="10_n471f"]
+[ext_resource type="Texture2D" uid="uid://juix8rryx6er" path="res://Sprites/Characters/Mina/b2.png" id="11_7emwf"]
+[ext_resource type="Texture2D" uid="uid://b5n5ba2wiuxtr" path="res://Sprites/Characters/Mina/b3.png" id="12_hshwv"]
+[ext_resource type="Texture2D" uid="uid://b53uvmvkyty76" path="res://Sprites/Characters/Mina/b4.png" id="13_gpjlu"]
+[ext_resource type="PackedScene" uid="uid://dvgldq1m1ll3s" path="res://Audio/Scenes/audio_controller.tscn" id="20_n471f"]
+[ext_resource type="Texture2D" uid="uid://delcuxnhdjp7e" path="res://Sprites/Characters/Hollowing/dirtkick1.png" id="21_gpjlu"]
+[ext_resource type="Texture2D" uid="uid://c3as4nvwwsjhi" path="res://Sprites/Characters/Hollowing/dirtkick2.png" id="22_8mwp6"]
+[ext_resource type="Texture2D" uid="uid://bk3it0nuhu66e" path="res://Sprites/Characters/Hollowing/dirtkick3.png" id="23_qemgg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ntmi"]
+radius = 0.41949463
+height = 0.83898926
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mwp6"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": ExtResource("4_8mwp6")
+}, {
+"duration": 1.2,
+"texture": ExtResource("5_qemgg")
+}],
+"loop": true,
+"name": &"blink_down",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("6_8viyr")
+}, {
+"duration": 1.5,
+"texture": ExtResource("7_sm0op")
+}],
+"loop": true,
+"name": &"blink_sideways",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dkpta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lfmf2")
+}],
+"loop": true,
+"name": &"hollowing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o28un")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gu6f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dkpta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lfmf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pisgm")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b1ygp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o28un")
+}],
+"loop": true,
+"name": &"walk_sideways",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_n471f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7emwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hshwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gpjlu")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8viyr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_gpjlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8mwp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qemgg")
+}],
+"loop": false,
+"name": &"dirtkick",
+"speed": 9.0
+}]
+
+[node name="Player" type="CharacterBody3D" unique_id=722806525]
+script = ExtResource("1_4ntmi")
+
+[node name="ShadowSprite" type="Sprite3D" parent="." unique_id=1884231149]
+transform = Transform3D(1.2, 0, 0, 0, -5.2453668e-08, -1.2, 0, 1.2, -5.2453668e-08, 0, 0, 0.33826333)
+modulate = Color(0, 0, 0, 0.6509804)
+texture_filter = 0
+texture = ExtResource("3_p5o4e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=664787001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43117917, 0)
+shape = SubResource("CapsuleShape3D_4ntmi")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2130996359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3390001, 0)
+modulate = Color(2, 2, 2, 1)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_8mwp6")
+animation = &"blink_down"
+
+[node name="HollowTimer" type="Timer" parent="." unique_id=1405127997]
+wait_time = 1.5
+
+[node name="StateLabel" type="Label3D" parent="." unique_id=538661070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78939664, -0.59)
+billboard = 1
+text = "Current State"
+font_size = 52
+outline_size = 20
+
+[node name="AudioController" parent="." unique_id=1600818916 instance=ExtResource("20_n471f")]
+
+[node name="KickDirt" type="AnimatedSprite3D" parent="." unique_id=755016263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3938445, 0)
+visible = false
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_8viyr")
+animation = &"dirtkick"
+
+[connection signal="timeout" from="HollowTimer" to="." method="_on_hollow_timer_timeout"]
+[connection signal="animation_finished" from="KickDirt" to="." method="_on_kick_dirt_animation_finished"]

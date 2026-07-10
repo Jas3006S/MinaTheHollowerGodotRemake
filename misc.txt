@@ -1,0 +1,61 @@
+
+func _physics_process(delta: float) -> void:
+	#match state:
+		#State.WALKING:
+	
+	# Add the gravity.
+	if not is_on_floor():
+		if velocity.y > 0: # player rising
+			velocity.y -= GRAVMULT_UP * delta
+		else:
+			velocity.y -= GRAVMULT_DOWN * delta
+	
+	# Handle jump.
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = JUMP_FORCE
+		jumped = true
+	elif Input.is_action_pressed("Jump") and is_on_floor() and jumped:
+		print("burrowing")
+		jumped = false
+		
+		hollow_timer.start()
+	
+	if enhanced_jump:
+		velocity.y = EMERGE_JUMP_FORCE
+		enhanced_jump = false
+	
+	## Horizontal movement — X and Z are the ground plane in 3D, Y hardcoded to 0 for walking
+	# Build the direction vector for movement
+	# normalized() stops the vector's length at 1 so diagonal movement isn't faster than cardinal
+	var _input = Vector3(
+		Input.get_axis("ui_left", "ui_right"),
+		0,
+		Input.get_axis("ui_up", "ui_down")
+	).normalized()
+	
+	# exponential lerping applied to X and Z values
+	# If input is held -> lerp towards MAX_SPEED
+	# If input released -> lerp towards 0, FRICTION makes this lerp faster for a smooth decelartion look
+	var lerp_weight = 1.0 - exp(-delta * (ACCELERATION if _input else FRICTION))
+	velocity.x = lerp(velocity.x, _input.x * MAX_SPEED, lerp_weight)
+	velocity.z = lerp(velocity.z, _input.z * MAX_SPEED, lerp_weight)
+	
+	move_and_slide()
+	
+	
+	# Store last non-zero direction so idle faces the right way
+	if _input != Vector3.ZERO:
+		last_direction = _input
+	
+	update_anim(_input)
+	
+	
+	## Body's y position in world
+	var body_world_y : float = position.y
+	
+	## Shadows Movement
+	shadow_sprite.position.y = -body_world_y  # inverse of player height so its stuck to the ground
+	shadow_sprite.scale = Vector3(1.22, 0.62, 1.0) * clamp(1.0 - body_world_y * 0.1, 0.2, 1.0) # shift in scale
+	
+	## Character Sprite Jump offset on z axis
+	anim_sprite.position.z = body_world_y * -SPRITE_JUMP_OFFSET
