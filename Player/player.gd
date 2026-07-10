@@ -26,7 +26,6 @@ extends CharacterBody3D
 
 ## On ready variables
 @onready var state_label: Label3D = $StateLabel
-@onready var char_sprite : Sprite3D = $CharacterSprite
 @onready var shadow_sprite : Sprite3D = $ShadowSprite
 @onready var coll_shape3d : CollisionShape3D = $CollisionShape3D
 @onready var anim_sprite : AnimatedSprite3D = $AnimatedSprite3D
