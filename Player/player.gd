@@ -139,6 +139,7 @@ func horizontal_movement(delta : float, speed_mult : float) -> void:
 	#else:
 		#anim_sprite.stop()
 
+
 func update_visuals() -> void:
 	# body's y position in world
 	var body_world_y : float = position.y
@@ -162,6 +163,7 @@ func update_anim(input : Vector3) -> void:
 			anim_sprite.stop()
 		return
 	
+	
 	# Z axis is forward/back in 3D
 	# X axis is left/right
 	if abs(input.x) > abs(input.z):
@@ -170,11 +172,13 @@ func update_anim(input : Vector3) -> void:
 		anim_sprite.flip_h = input.x < 0 # Flipping sprite
 		last_anim = "walk_sideways"
 	
+	
 	elif input.z < 0:
 		# Moving up (away from camera)
 		anim_sprite.play("walk_up")
 		anim_sprite.flip_h = false
 		last_anim = "walk_up"
+	
 	
 	else:
 		# Moving down
